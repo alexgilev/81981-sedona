@@ -14,12 +14,12 @@
 
 <body>
 	<header class="page-header">
-		<a href="index.html" class="header-logo">
+		<a href="index.html" class="page-header__logo">
 			<img src="img/logo.png" alt="sedona logotype" title="Седона">
 		</a>
 
-		<button id="toggle-nav">Открыть меню</button>
-		<nav class="mobile-nav">
+		<button class="page-header__togggle" id="toggle-nav">Открыть меню</button>
+		<nav class="page-header__mobile-nav">
 			<ul>
 				<li><a href="javascript:void(0)">Карта штата</a></li>
 				<li><a href="javascript:void(0)">Информация</a></li>
@@ -31,257 +31,258 @@
 	</header>
 
 
-
 	<main>
-		<!-- Hero section -->
+		<!-- Hero -->
 		<section class="hero">
-			<img class="hero-title" src="img/sedona.png" alt="Sedona">	
+			<div class="hero__wrapper">
+				<img class="hero__title" src="img/hero_title-2.png" alt="Sedona">	
+			</div>
+			<!-- /.hero__wrapper -->		
 		</section>
 		<!-- /.hero -->
 
 
 								
 		<!-- Leave a reply -->
-		<section class="leave-a-reply">
+		<section class="reply">
 			<h1>Оставьте свой отзыв</h1>
 			<p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещённых Вами достопримечательностях</p>
 
-			<hr>
 
-			<form action="" enctype="multipart/form-data" method="post">
+			<form action="" class="reply__form" enctype="multipart/form-data" method="post">
 
-				<!-- Представьтесь, пожалуйста: -->
-				<h1>Представьтесь, пожалуйста:</h1>
-				<label for="last-name">Фамилия:</label>
-				<div>
-					<input type="text" name="last-name" id="last-name" value="Иванов" required>
-				</div>
-
-				<label for="first-name">Имя:</label>
-				<div>
-					<input type="text" name="first-name" id="first-name" value="Петр" required>
-				</div>
-
-				<label for="middle-name">Отчество: <br>
+				<!-- Introduce yourself -->
+				<div class="reply__block">
+					<h1 class="reply__section-title">Представьтесь, пожалуйста:</h1>
+					<label for="last-name">Фамилия:</label>
 					<div>
-						<input type="text" name="middle-name" id="middle-name" value="Александрович">
+						<input type="text" name="last-name" id="last-name" value="Иванов" required>
 					</div>
-				</label>
+					
+					<label for="first-name">Имя:</label>
+					<div>
+						<input type="text" name="first-name" id="first-name" value="Петр" required>
+					</div>
+					
+					<label for="middle-name">Отчество: <br>
+						<div>
+							<input type="text" name="middle-name" id="middle-name" value="Александрович">
+						</div>
+					</label>
+				</div>
 
-				<hr>
 
 				<!-- Your opinion -->
-				<h1>Ваше общее впечатление:</h1>
-				<div>
-					<label>
-						<input type="radio" name="attitude" value="good" checked>Скорее положительное
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type="radio" name="attitude" value="bad">Скорее отрицательное
-					</label>
+				<div class="reply__block">
+					<h1 class="reply__section-title">Ваше общее впечатление:</h1>
+					<div>
+						<label>
+							<input type="radio" name="attitude" value="good" checked>Скорее положительное
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="radio" name="attitude" value="bad">Скорее отрицательное
+						</label>
+					</div>
 				</div>
 				
-				<hr>
 
 				<!-- Date of journey -->
-				<h1>Дата Вашей поездки:</h1>
+				<div class="reply__block">
+					<h1 class="reply__section-title">Дата Вашей поездки:</h1>
+					<label>Дата приезда:
+						<div>
+							<input type="text" id="checkin-date" name="date" value="4 июля 2015" required>
+						</div>
+					</label>
+					
+					<label>Длительность пребывания:
+						<div>
+							<input type="number" name="how-long" min="1" max="30" step="1" value="14" required>
+						</div>
+					</label>
+					
+					<label>Дата отъезда:
+						<div>
+							<input type="text" id="checkout-date" value="28 Июля 2015" required>
+						</div>
+					</label>
+				</div>
 				
-				<label>Дата приезда:
-					<div>
-						<input type="text" id="checkin-date" name="date" value="4 июля 2015" required>
-					</div>
-				</label>
-				
-				<label>Длительность пребывания:
-					<div>
-						<input type="number" name="how-long" min="1" max="30" step="1" value="14" required>
-					</div>
-				</label>
-				
-				<label>Дата отъезда:
-					<div>
-						<input type="text" id="checkout-date" value="28 Июля 2015" required>
-					</div>
-				</label>
-				
-				<hr>
 
 				<!-- Number of participants -->
-				<h1>Кол-во путешественников:</h1>
-				
-				<label for="participants">Количество путешественников:
-					<div>
-					    <button>-</button>
-					    <input type="text" id="participants" value="2"/>
-					    <button>+</button>
-					</div>
-				</label>
-				
-				
-				<!-- Person #1 -->
-				<div>
-					<label>№:
-						<input type="number" name="person-number" value="1" readonly>
-					</label>					
-					<label>Фамилия:
-						<input type="text" name="last-name" value="Иванов" required>
-					</label>					
-				</div>
-				<div>
-					<label>Имя:
-						<input type="text" name="first-name" value="Пётр" required>
-					</label>
-				</div>
-				<div>
-					<label>Отчество:
-						<input type="text" name="middle-name" value="Александрович">
-					</label>
-				</div>
+				<div class="reply__block">
+					<h1 class="reply__section-title">Кол-во путешественников:</h1>
 					
-				<!-- Person #2 -->
-				<div>
-					<label>№:
-						<input type="number" name="person-number" value="2" readonly>
+					<label for="participants">Количество путешественников:
+						<div>
+						    <button>-</button>
+						    <input type="text" id="participants" value="2"/>
+						    <button>+</button>
+						</div>
 					</label>
-					<label>Фамилия:
-						<input type="text" name="last-name" value="Иванов" required>
-					</label>
-				</div>
-				<div>
-					<label>Имя:
-						<input type="text" name="first-name" value="Пётр" required>
-					</label>
-				</div>
-				<div>
-					<label>Отчество:
-						<input type="text" name="middle-name" value="Александрович">
-					</label>
+					
+					<!-- Person #1 -->
+					<div>
+						<label>№:
+							<input type="number" name="person-number" value="1" readonly>
+						</label>					
+						<label>Фамилия:
+							<input type="text" name="last-name" value="Иванов" required>
+						</label>					
+					</div>
+					<div>
+						<label>Имя:
+							<input type="text" name="first-name" value="Пётр" required>
+						</label>
+					</div>
+					<div>
+						<label>Отчество:
+							<input type="text" name="middle-name" value="Александрович">
+						</label>
+					</div>
+						
+					<!-- Person #2 -->
+					<div>
+						<label>№:
+							<input type="number" name="person-number" value="2" readonly>
+						</label>
+						<label>Фамилия:
+							<input type="text" name="last-name" value="Иванов" required>
+						</label>
+					</div>
+					<div>
+						<label>Имя:
+							<input type="text" name="first-name" value="Пётр" required>
+						</label>
+					</div>
+					<div>
+						<label>Отчество:
+							<input type="text" name="middle-name" value="Александрович">
+						</label>
+					</div>
 				</div>
 
-				<hr>
 
 				<!-- Visited places -->
-				<h1>Посещенные достопримечательности:</h1>
-				<div>
-					<label>
-						<input type="checkbox" name="bridge" id="bridge" checked> Мост Дьявола
-					</label>
+				<div class="reply__block">
+					<h1 class="reply__section-title">Посещенные достопримечательности:</h1>
+					<div>
+						<label>
+							<input type="checkbox" name="bridge" id="bridge" checked> Мост Дьявола
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" name="park" id="park"> Слайд-парк
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" name="mountain" id="mountain" checked> Гора-Колокол
+						</label>
+					</div>
+					<div>
+						<label>
+							<input type="checkbox" name="red-rocks" id="red-rocks" checked> Красные скалы
+						</label>
+					</div>
 				</div>
-				<div>
-					<label>
-						<input type="checkbox" name="park" id="park"> Слайд-парк
-					</label>
+
+				
+				<!-- Upload photos -->
+				<div class="reply__block">
+					<h1 class="reply__section-title">Загрузите фотографии:</h1>
+					<input type="file" name="upload-photos" id="upload-photos">
+					<ul class="uploaded">
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-1.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-2.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-3.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-4.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-5.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-6.jpg" alt="">
+						</li>					
+					
+						<li class="uploaded__photo">
+							<span class="remove-photo"></span>
+							<img src="img/upload-photo-7.jpg" alt="">
+						</li>
+					</ul>
 				</div>
-				<div>
-					<label>
-						<input type="checkbox" name="mountain" id="mountain" checked> Гора-Колокол
-					</label>
-				</div>
-				<div>
-					<label>
-						<input type="checkbox" name="red-rocks" id="red-rocks" checked> Красные скалы
-					</label>
-				</div>
 
-				<hr>
-
-				<h1>Загрузите фотографии:</h1>
-				<input type="file" name="upload-photos" id="upload-photos">
-				<ul class="uploaded-photos">
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-1.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-2.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-3.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-4.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-5.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-6.jpg" alt="">
-					</li>					
-
-					<li class="uploaded-photo">
-						<span class="remove-photo"></span>
-						<img src="img/upload-photo-7.jpg" alt="">
-					</li>
-				</ul>
-				<button type="submit">Отправить отзыв</button>
+				<button class="btn btn-primary" type="submit">Отправить отзыв</button>
 			</form>
 		</section>
 
 
 
 		<!-- Failure pop-up -->
-		<section class="failure-popup">
-			<article class="message-with-button">
-				<hader>
-					<h1>Что-то пошло не так!</h1>
-				</hader>
-				<section>
-					<p>Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
-					<a class="primary-btn" href="javascript:void(0)">Ок</a>
-				</section>			
-			</article>
+		<section class="message">
+			<h1>Что-то пошло не так!</h1>
+			<p>Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить</p>
+			<a class="btn btn-primary" href="javascript:void(0)">Ок</a>
 		</section>
-		<!-- /.failure-popup -->
+		<!-- /.message -->
 
 
 
 		<!-- 'Message is sent' pop-up -->
-		<section class="message-sent-popup">
-			<article class="message-with-button">
-				<hader>
-					<h1>Ваш отзыв отправлен!</h1>
-				</hader>
-				<section>
-					<p>Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
-					<a class="primary-btn" href="javascript:void(0)">Закрыть окно</a>
-				</section>			
-			</article>
+		<section class="message">
+			<h1>Ваш отзыв отправлен!</h1>
+			<p>Спасибо за Ваше участие, Ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.</p>
+			<a class="btn btn-primary" href="javascript:void(0)">Закрыть окно</a>
 		</section>
-		<!-- /.message-sent-popup -->
+		<!-- /.message -->
 	</main>
 
 
 
 	<footer class="page-footer">
-		<section class="info">
-			<h1>#visitsedona</h1>
-			<ul class="social-links">
-				<li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
-				<li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
-				<li class="youtube"><a href="javascript:void(0)">YouTube</a></li>
-			</ul>
-		</section>
-
-
-		<section class="copyright">
-			<a class="made-by" href="https://htmlacademy.ru">
-			Разработано 
-	           <img class="footer-logo" src="img/html-academy-logo.svg" width="27px" height="34px">
-      		</a>
-		</section>
+		<div class="page-footer__wrapper">
+			<div class="page-footer__info">
+				<p class="page-footer__header">#visitsedona</p>
+				<ul class="page-footer__social-links">
+					<li><a class="social-links__icon-twitter" href="javascript:void(0)">Twitter</a></li>
+					<li><a class="social-links__icon-facebook" href="javascript:void(0)">Facebook</a></li>
+					<li><a class="social-links__icon-youtube" href="javascript:void(0)">YouTube</a></li>
+				</ul>
+			</div>
+			<!-- /.page-footer__info -->
+			
+			<div class="page-footer__copyright">
+				<a class="made-by" href="https://htmlacademy.ru">
+				Разработано 
+				  <img class="made-by__logo" src="img/logo_footer.svg" width="27px" height="34px">
+			  </a>
+			</div>
+			<!-- /.page-footer__copyright -->
+		</div>
+		<!-- /.page-footer__wrapper -->
 	</footer>
+
 
 
 

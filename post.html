@@ -14,12 +14,12 @@
 
 <body>
 	<header class="page-header">
-		<a href="index.html" class="header-logo">
+		<a href="index.html" class="page-header__logo">
 			<img src="img/logo.png" alt="sedona logotype" title="Седона">
 		</a>
 
-		<button id="toggle-nav">Открыть меню</button>
-		<nav class="mobile-nav">
+		<button class="page-header__togggle" id="toggle-nav">Открыть меню</button>
+		<nav class="page-header__mobile-nav">
 			<ul>
 				<li><a href="javascript:void(0)">Карта штата</a></li>
 				<li><a href="javascript:void(0)">Информация</a></li>
@@ -33,9 +33,12 @@
 
 
 	<main>
-		<!-- Hero section -->
+		<!-- Hero -->
 		<section class="hero">
-			<img class="hero-title" src="img/sedona.png" alt="Sedona">	
+			<div class="hero__wrapper">
+				<img class="hero__title" src="img/hero_title-2.png" alt="Sedona">	
+			</div>
+			<!-- /.hero__wrapper -->		
 		</section>
 		<!-- /.hero -->
 
@@ -46,76 +49,72 @@
 			<h1>Блог шерифа</h1>
 			<p>Седона удивительный город! Горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.</p>
 
-			<ul class="post-tags">
-				<li><a href="javascript:void(0)" class="post-date">Позавчера</a></li>
-				<li><a href="javascript:void(0)" class="post-tag">Происшествия</a></li>
+			<ul class="blog__post-tags">
+				<li><a href="javascript:void(0)" class="blog__post-date">Позавчера</a></li>
+				<li><a href="javascript:void(0)" class="blog__post-tag">Происшествия</a></li>
 			</ul>
 
-			<h1 class="post-title">Внимание! сбежала моя домашняя анаконда</h1>
-			<p class="post-intro">Жители Седоны и гости города, будьте бдительны — Сбежала моя домашняя змея. Увидевшему срочно звонить 911 и бежать от нее подальше.</p>
-
-			<article class="post-content">
+			<article class="blog__single-post">
 				<header>
-					<h1 class="post-content-title">Предыстория</h1>
+					<h1 class="single-post__title">Внимание! сбежала моя домашняя анаконда</h1>
+					<p class="single-post__intro">Жители Седоны и гости города, будьте бдительны — Сбежала моя домашняя змея. Увидевшему срочно звонить 911 и бежать от нее подальше.</p>
 				</header>
-				<p class="post-content-paragraph">В далеком 85-ом я подобрал эту змею на трассе. Ее переехал грузовик и она валялась на обочине. Мне стало жаль ее и я решил взять ее с собой. Кинул в багажник пикапа и подумал  тогда: «Если доедет до Седоны живой, так и быть, оставлю ее себе»</p>
-			</article>					
+				
+				<section>
+					<h1>Предыстория</h1>
+					<p>В далеком 85-ом я подобрал эту змею на трассе. Ее переехал грузовик и она валялась на обочине. Мне стало жаль ее и я решил взять ее с собой. Кинул в багажник пикапа и подумал  тогда: «Если доедет до Седоны живой, так и быть, оставлю ее себе»</p>
+									
+					<h1>Пропажа</h1>
+					<p>Неделю назад я вернулся из канзаса и не нашел Анаконду дома. Обошел все 200 гектаров своего участка, но ее нигде нет. Решил сообщить в полицию, но вовремя вспомнил, что я и есть полиция, поэтому отправился на поиски сам. особые приметы змеи:</p>
+					<ul class="single-post__facts">
+						<li>Длина: 5 метров</li>
+						<li>Масса: 85 кг</li>
+						<li>Окраска: серовато-зелёная</li>
+					</ul>
+					<p>Если вы увидите эту змею, сразу <span class="underline">звоните 911</span> и бегите со всех ног от нее!</p>
+					
+					<h1>Предостережение</h1>
+					<p>Не пытайтесь убить змею, если увидите! Помните, что она тоже живое существо, хоть и выглядит не очень приятно. вот цитата, которая мне очень нравится:</p>
+					
+					<blockquote class="quote">
+						Самый свирепый из зверей — теперь мы знаем — это человек, он убивает даже если не голоден.
+						<cite>Адриано Челентано</cite>
+					</blockquote>
 
-			<article class="post-content">
-				<header>
-					<h1 class="post-content-title">Пропажа</h1>
-				</header>
-				<p class="post-content-paragraph">Неделю назад я вернулся из канзаса и не нашел Анаконду дома. Обошел все 200 гектаров своего участка, но ее нигде нет. Решил сообщить в полицию, но вовремя вспомнил, что я и есть полиция, поэтому отправился на поиски сам. особые приметы змеи:</p>
-
-				<ul class="post-content-facts">
-					<li>Длина: 5 метров</li>
-					<li>Масса: 85 кг</li>
-					<li>Окраска: серовато-зелёная</li>
-				</ul>
-
-				<p class="post-content-paragraph">Если вы увидите эту змею, сразу <span class="underline">звоните 911</span> и бегите со всех ног от нее!</p>
+					<!-- Pagination -->
+					<ul class="single-post__pagination">
+						<li><a href="javascript:void(0)">Пред.</a></li>
+						<li><a href="javascript:void(0)">След.</a></li>			
+						<li><a href="javascript:void(0)">Назад к списку</a></li>
+					</ul>
+				</section>
 			</article>
-
-			<article class="post-content">
-				<header>
-					<h1 class="post-content-title">Предостережение</h1>
-				</header>
-				<p class="post-content-paragraph">Не пытайтесь убить змею, если увидите! Помните, что она тоже живое существо, хоть и выглядит не очень приятно. вот цитата, которая мне очень нравится:</p>
-				<p class="quote">
-					<cite>Самый свирепый из зверей — теперь мы знаем — это человек, он убивает даже если не голоден.</cite>
-				Адриано Челентано</p>
-			</article>
-
-			<hr>
-
-			<!-- Pagination -->
-			<ul class="blog-post-pagination">
-				<li><a href="javascript:void(0)">Пред.</a></li>
-				<li><a href="javascript:void(0)">След.</a></li>			
-				<li><a href="javascript:void(0)">Назад к списку</a></li>
-			</ul>
+			<!-- /.blog__single-post -->
 		</section>
+		<!-- /.blog-post-wrapper -->
 	</main>
 
-	<hr>
-
 	<footer class="page-footer">
-		<section class="info">
-			<h1>#visitsedona</h1>
-			<ul class="social-links">
-				<li class="twitter"><a href="javascript:void(0)">Twitter</a></li>
-				<li class="facebook"><a href="javascript:void(0)">Facebook</a></li>
-				<li class="youtube"><a href="javascript:void(0)">YouTube</a></li>
-			</ul>
-		</section>
-
-
-		<section class="copyright">
-			<a class="made-by" href="https://htmlacademy.ru">
-			Разработано 
-	           <img class="footer-logo" src="img/html-academy-logo.svg" width="27px" height="34px">
-      		</a>
-		</section>
+		<div class="page-footer__wrapper">
+			<div class="page-footer__info">
+				<p class="page-footer__header">#visitsedona</p>
+				<ul class="page-footer__social-links">
+					<li><a class="social-links__icon-twitter" href="javascript:void(0)">Twitter</a></li>
+					<li><a class="social-links__icon-facebook" href="javascript:void(0)">Facebook</a></li>
+					<li><a class="social-links__icon-youtube" href="javascript:void(0)">YouTube</a></li>
+				</ul>
+			</div>
+			<!-- /.page-footer__info -->
+			
+			<div class="page-footer__copyright">
+				<a class="made-by" href="https://htmlacademy.ru">
+				Разработано 
+				  <img class="made-by__logo" src="img/logo_footer.svg" width="27px" height="34px">
+			  </a>
+			</div>
+			<!-- /.page-footer__copyright -->
+		</div>
+		<!-- /.page-footer__wrapper -->
 	</footer>
 
 
